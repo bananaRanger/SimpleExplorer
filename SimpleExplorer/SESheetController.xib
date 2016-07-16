@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SESheetController">
+            <connections>
+                <outlet property="actionButton" destination="cd1-MF-XA3" id="V4u-d6-U37"/>
+                <outlet property="cancelButton" destination="IU0-aA-Bdk" id="rhq-jQ-dNB"/>
+                <outlet property="segmentControl" destination="utF-Id-WZC" id="6Y1-S5-BQn"/>
+                <outlet property="textField" destination="Mnx-Li-e56" id="CpN-BS-RhR"/>
+                <outlet property="titleLabel" destination="eOk-9B-63r" id="9NO-Z2-g8M"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="222"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfo-gr-2IS">
+                    <rect key="frame" x="12" y="151" width="316" height="51"/>
+                    <subviews>
+                        <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="D3a-JI-i3P">
+                            <rect key="frame" x="0.0" y="48" width="308" height="5"/>
+                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <font key="titleFont" metaFont="system"/>
+                        </box>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eOk-9B-63r">
+                            <rect key="frame" x="-2" y="9" width="320" height="33"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Создание элемента" id="nqT-jM-M9f">
+                                <font key="font" metaFont="systemUltraLight" size="27"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="qTS-Ek-3Xy">
+                            <rect key="frame" x="0.0" y="-2" width="308" height="5"/>
+                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <font key="titleFont" metaFont="system"/>
+                        </box>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="D3a-JI-i3P" secondAttribute="trailing" constant="8" id="Kfu-bR-sb5"/>
+                        <constraint firstItem="D3a-JI-i3P" firstAttribute="trailing" secondItem="qTS-Ek-3Xy" secondAttribute="trailing" id="We1-SF-cMi"/>
+                        <constraint firstItem="eOk-9B-63r" firstAttribute="centerY" secondItem="bfo-gr-2IS" secondAttribute="centerY" id="iEh-72-mYE"/>
+                        <constraint firstItem="eOk-9B-63r" firstAttribute="centerX" secondItem="bfo-gr-2IS" secondAttribute="centerX" id="sv0-T5-frS"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <real value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+                <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="utF-Id-WZC">
+                    <rect key="frame" x="87" y="120" width="167" height="24"/>
+                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="toP-VB-FCA">
+                        <font key="font" metaFont="system"/>
+                        <segments>
+                            <segment label="Папка" image="ImageFolder" width="81" selected="YES"/>
+                            <segment label="Файл" image="ImageFile" width="79" tag="1"/>
+                        </segments>
+                    </segmentedCell>
+                    <connections>
+                        <action selector="switchSelectSegment:" target="-2" id="UF8-93-orN"/>
+                    </connections>
+                </segmentedControl>
+                <box borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="7T0-LS-G7X">
+                    <rect key="frame" x="9" y="45" width="322" height="79"/>
+                    <view key="contentView" id="Cce-X9-msw">
+                        <rect key="frame" x="1" y="1" width="320" height="63"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mnx-Li-e56">
+                                <rect key="frame" x="20" y="21" width="280" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Имя элемента" bezelStyle="round" id="jmx-Hg-Wug">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Mnx-Li-e56" firstAttribute="centerY" secondItem="Cce-X9-msw" secondAttribute="centerY" id="4GD-7h-IPb"/>
+                            <constraint firstItem="Mnx-Li-e56" firstAttribute="leading" secondItem="Cce-X9-msw" secondAttribute="leading" constant="20" symbolic="YES" id="8Pi-Li-Vsp"/>
+                            <constraint firstItem="Mnx-Li-e56" firstAttribute="centerX" secondItem="Cce-X9-msw" secondAttribute="centerX" id="Xek-Ya-rQA"/>
+                            <constraint firstItem="Mnx-Li-e56" firstAttribute="top" secondItem="Cce-X9-msw" secondAttribute="top" constant="20" symbolic="YES" id="fUe-7K-rkS"/>
+                        </constraints>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
+                <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uvm-Zf-vc4">
+                    <rect key="frame" x="183" y="20" width="145" height="21"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IU0-aA-Bdk">
+                            <rect key="frame" x="-6" y="-7" width="82" height="32"/>
+                            <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GiT-9f-hau">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                            </buttonCell>
+                            <connections>
+                                <action selector="cancelButtonClicked:" target="-2" id="6Wp-gY-Mcj"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cd1-MF-XA3">
+                            <rect key="frame" x="72" y="-7" width="79" height="32"/>
+                            <buttonCell key="cell" type="push" title="Action" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kgO-pe-2aI">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                            </buttonCell>
+                            <connections>
+                                <action selector="actionButtonClicked:" target="-2" id="xMn-75-Gc7"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="utF-Id-WZC" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="8wj-1j-Ec4"/>
+                <constraint firstAttribute="bottom" secondItem="Uvm-Zf-vc4" secondAttribute="bottom" constant="20" id="KBA-7x-4T7"/>
+                <constraint firstItem="utF-Id-WZC" firstAttribute="top" secondItem="bfo-gr-2IS" secondAttribute="bottom" constant="8" id="LO1-Zh-VC6"/>
+                <constraint firstAttribute="trailing" secondItem="bfo-gr-2IS" secondAttribute="trailing" constant="12" id="USi-bl-HQo"/>
+                <constraint firstItem="7T0-LS-G7X" firstAttribute="trailing" secondItem="bfo-gr-2IS" secondAttribute="trailing" id="Ydu-m6-Q6H"/>
+                <constraint firstItem="7T0-LS-G7X" firstAttribute="leading" secondItem="bfo-gr-2IS" secondAttribute="leading" id="b37-y4-fFg"/>
+                <constraint firstItem="Uvm-Zf-vc4" firstAttribute="top" secondItem="7T0-LS-G7X" secondAttribute="bottom" constant="8" symbolic="YES" id="c0n-bi-iAF"/>
+                <constraint firstItem="bfo-gr-2IS" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="12" id="dyh-oQ-2uS"/>
+                <constraint firstAttribute="trailing" secondItem="Uvm-Zf-vc4" secondAttribute="trailing" constant="12" id="nMF-vd-NPV"/>
+                <constraint firstAttribute="bottom" secondItem="7T0-LS-G7X" secondAttribute="bottom" constant="49" id="ogB-AS-rBW"/>
+                <constraint firstItem="7T0-LS-G7X" firstAttribute="top" secondItem="bfo-gr-2IS" secondAttribute="bottom" constant="27" id="txc-oF-6X8"/>
+                <constraint firstItem="7T0-LS-G7X" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="vf1-bZ-SKI"/>
+                <constraint firstItem="bfo-gr-2IS" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="zK4-z2-jOf"/>
+            </constraints>
+            <point key="canvasLocation" x="472" y="140"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="ImageFile" width="32" height="32"/>
+        <image name="ImageFolder" width="32" height="32"/>
+    </resources>
+</document>
